@@ -1,0 +1,45 @@
+{
+    "name": "reindeer",
+    "version": "0.1.0",
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "precommit": "lint-staged",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,json,css}": [
+            "prettier --single-quote --tab-width 4 --write",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "antd": "^3.7.3",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
+        "react-router": "^4.3.1",
+        "react-router-dom": "^4.3.1",
+        "react-scripts": "1.1.4",
+        "redux": "^4.0.0"
+    },
+    "devDependencies": {
+        "babel-eslint": "^8.2.6",
+        "babel-plugin-import": "^1.8.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb-base": "^13.0.0",
+        "eslint-friendly-formatter": "^4.0.1",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-react": "^7.10.0",
+        "husky": "^0.14.3",
+        "immutable": "^3.8.2",
+        "lint-staged": "^7.2.0",
+        "prettier": "^1.13.7"
+    }
+}

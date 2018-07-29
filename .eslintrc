@@ -1,0 +1,60 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "plugins": ["react"],
+    "extends": ["airbnb-base", "plugin:react/recommended"],
+    "parser": "babel-eslint",
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src/"],
+                "extensions": [".js", ".jsx", ",css", ".json"]
+            }
+        }
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "array-bracket-spacing": ["error", "never"],
+        "brace-style": [2, "stroustrup"],
+        "class-methods-use-this": ["warning", "never"],
+        "comma-dangle": ["error", "never"],
+        "global-require": ["warning", "never"],
+        "import/no-dynamic-require": ["warning", "never"],
+        "implicit-arrow-linebreak": ["warning", "beside"],
+        "indent": ["error", 4],
+        "keyword-spacing": 2,
+        "lines-between-class-members": ["error", "never"],
+        "max-len": [1, {
+            "code": 120,
+            "ignoreUrls": true,
+            "ignoreStrings": true,
+            "ignoreTemplateLiterals": true,
+            "ignoreRegExpLiterals": true,
+            "ignoreComments": true
+        }],
+        "no-param-reassign": ["error", {
+            "props": true,
+            "ignorePropertyModificationsFor": []
+        }],
+        "no-plusplus": ["warning", "never"],
+        "no-unused-vars": ["error", {
+            "vars": "all",
+            "args": "after-used",
+            "ignoreRestSiblings": false
+        }],
+        "prop-types": [0],
+        "quote-props": ["error", "consistent-as-needed"],
+        "react/no-string-refs": ["warning", "never"],
+        "strict": 0
+    }
+}
