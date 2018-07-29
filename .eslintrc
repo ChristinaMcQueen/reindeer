@@ -6,7 +6,7 @@
         "es6": true
     },
     "plugins": ["react"],
-    "extends": ["airbnb-base", "plugin:react/recommended"],
+    "extends": ["react-app", "airbnb-base", "plugin:react/recommended"],
     "parser": "babel-eslint",
     "settings": {
         "import/resolver": {

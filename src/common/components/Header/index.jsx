@@ -1,11 +1,44 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
+import { Menu, Icon } from 'antd';
 
-// import style from './header.module.styl';
+import setRouter from '../../../actions/router';
+import config from './config';
+
+const mapStateToProps = state => ({
+    location: state.router.location
+});
+
+const mapDispatchProps = dispatch => ({
+    actions: bindActionCreators({ setRouter }, dispatch)
+});
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick(name, path) {
+        this.props.actions.setRouter(name);
+        this.props.history.push(path);
+    }
     render() {
-        return <header className="header">Header</header>;
+        return <header className="header">
+            <Menu
+                selectedKeys={[this.props.location]}
+                mode="horizontal"
+            >
+                {config.Menu.map(item => <Menu.Item
+                    key={item.name}
+                    onClick={() => this.handleClick(item.name, item.path)}
+                >
+                    <Icon type={item.icon} />{item.value}
+                </Menu.Item>)}
+            </Menu>
+        </header>;
     }
 }
 
-export default Header;
+export default withRouter(connect(mapStateToProps, mapDispatchProps)(Header));
