@@ -1,6 +1,4 @@
-import {
-    createStore
-} from 'redux';
+import { createStore } from 'redux';
 
 import rootReducer from '../reducers';
 
@@ -17,6 +15,6 @@ const storeConfig = (initialState = {
         });
     }
     return store;
-}
+};
 
 export default storeConfig;

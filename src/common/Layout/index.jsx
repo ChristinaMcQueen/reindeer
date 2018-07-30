@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import 'reset-css';
 import 'antd/lib/button/style/css';
@@ -21,5 +22,11 @@ class Layout extends Component {
         );
     }
 }
+Layout.propTypes = {
+    children: PropTypes.array.isRequired
+};
+Layout.defaultProps = {
+    children: []
+};
 
 export default Layout;

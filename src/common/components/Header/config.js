@@ -13,6 +13,6 @@ config.Menu = [
         path: '/lifecircle',
         value: 'Component Life Circle'
     }
-]
+];
 
 export default config;

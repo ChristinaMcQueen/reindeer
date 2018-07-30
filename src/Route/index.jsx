@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore, combineReducers } from 'redux';
 
 import Layout from '../common/Layout';
 import Home from '../views/Home';

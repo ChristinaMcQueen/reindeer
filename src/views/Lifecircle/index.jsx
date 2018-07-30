@@ -19,9 +19,9 @@ class Lifecircle extends Component {
     getInitialState() {
         console.log('getInitialState');
     }
-    componentWillMount() {
-        console.log('componentWillMount');
-    }
+    // componentWillMount() {
+    //     console.log('componentWillMount');
+    // }
     componentDidMount() {
         console.log('componentDidMount');
     }
@@ -31,9 +31,9 @@ class Lifecircle extends Component {
     shouleComponentUpdate() {
         console.log('shouleComponentUpdate');
     }
-    componentWillUpdate() {
-        console.log('componentWillUpdate');
-    }
+    // componentWillUpdate() {
+    //     console.log('componentWillUpdate');
+    // }
     componentDidUpdate() {
         console.log('componentDidUpdate');
     }

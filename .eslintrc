@@ -26,12 +26,15 @@
     "rules": {
         "array-bracket-spacing": ["error", "never"],
         "brace-style": [2, "stroustrup"],
-        "class-methods-use-this": ["warning", "never"],
+        "class-methods-use-this": ["off"],
         "comma-dangle": ["error", "never"],
-        "global-require": ["warning", "never"],
-        "import/no-dynamic-require": ["warning", "never"],
-        "implicit-arrow-linebreak": ["warning", "beside"],
+        "global-require": "off",
+        "import/no-dynamic-require": "off",
         "indent": ["error", 4],
+        "jsx-a11y/href-no-hash": "off",
+        "jsx-a11y/anchor-is-valid": ["warn", {
+            "aspects": ["invalidHref"]
+        }],
         "keyword-spacing": 2,
         "lines-between-class-members": ["error", "never"],
         "max-len": [1, {
@@ -44,9 +47,11 @@
         }],
         "no-param-reassign": ["error", {
             "props": true,
-            "ignorePropertyModificationsFor": []
+            "ignorePropertyModificationsFor": [
+                "options"
+            ]
         }],
-        "no-plusplus": ["warning", "never"],
+        "no-plusplus": "off",
         "no-unused-vars": ["error", {
             "vars": "all",
             "args": "after-used",
@@ -54,7 +59,7 @@
         }],
         "prop-types": [0],
         "quote-props": ["error", "consistent-as-needed"],
-        "react/no-string-refs": ["warning", "never"],
+        "react/no-string-refs": "off",
         "strict": 0
     }
 }

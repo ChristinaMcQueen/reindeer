@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
 import setRouter from '../../../actions/router';
@@ -40,5 +41,16 @@ class Header extends Component {
         </header>;
     }
 }
+
+Header.propTypes = {
+    location: PropTypes.string.isRequired,
+    actions: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+};
+Header.defaultProps = {
+    location: 'home',
+    actions: {},
+    history: {}
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchProps)(Header));

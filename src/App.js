@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Route from './views/Route';
+import Route from './Route';
 
 class App extends Component {
     render() {
