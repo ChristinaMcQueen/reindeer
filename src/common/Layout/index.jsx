@@ -6,7 +6,7 @@ import 'antd/lib/button/style/css';
 
 import '../style/index.css';
 import Header from '../components/Header';
-import storeConfig from '../../store';
+import storeConfig from '../../state/store';
 
 const store = storeConfig();
 
@@ -23,10 +23,10 @@ class Layout extends Component {
     }
 }
 Layout.propTypes = {
-    children: PropTypes.array.isRequired
+    children: PropTypes.object.isRequired
 };
 Layout.defaultProps = {
-    children: []
+    children: {}
 };
 
 export default Layout;
