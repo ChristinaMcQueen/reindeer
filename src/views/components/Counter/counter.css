@@ -1,0 +1,8 @@
+.counter-wrap {
+    counter-reset: counter;
+    margin-left: .625rem
+}
+.counter-wrap li::before {
+    counter-increment: counter;
+    content: counters(counter, '.') ' ';
+}

@@ -48,7 +48,8 @@
         "no-param-reassign": ["error", {
             "props": true,
             "ignorePropertyModificationsFor": [
-                "options"
+                "options",
+                "registration"
             ]
         }],
         "no-plusplus": "off",

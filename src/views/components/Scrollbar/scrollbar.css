@@ -1,0 +1,24 @@
+:root {
+    --box-shadow: inset 0 0 6px rgb(255, 10, 147, .5);
+}
+
+.scrollbar-wrap {
+    width: 200px;
+    height: 60px;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.scrollbar-wrap::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollbar-wrap::-webkit-scrollbar-track {
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.scrollbar-wrap::-webkit-scrollbar-thumb {
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}

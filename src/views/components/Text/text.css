@@ -1,0 +1,30 @@
+.text {
+    padding: 3rem 12rem;
+    margin: 0 auto;
+}
+.text section {
+    margin-bottom: 1rem;
+}
+.text .custom-selection > p::selection {
+    background: deeppink;
+    color: white;
+}
+.text .unselectable {
+    user-select: none;
+}
+.text .etched-wrap {
+    background: #181818;
+    padding: .5rem;
+}
+.text .etched-wrap .etched-text {
+    text-shadow: 0 .125rem white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b8bec5;
+}
+
+.text .gradient-wrap .gradient-text {
+    background: -webkit-linear-gradient(0.125turn, #3f87a6, #7983ff, #f69d3c);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

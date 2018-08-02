@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
-import setRouter from '../../../actions/router';
+import setRouter from '../../../state/actions/router';
 import config from './config';
 
 const mapStateToProps = state => ({
