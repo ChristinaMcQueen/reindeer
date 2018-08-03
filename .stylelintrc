@@ -1,0 +1,15 @@
+{
+    "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+    "rules": {
+        "at-rule-no-unknown": [true, {"ignoreAtRules" :[
+            "mixin", "extend", "content"
+        ]}],
+        "indentation": 4,
+        "number-leading-zero": "never",
+        "rule-empty-line-before": "never-multi-line"
+    },
+    "ignoreFiles": [
+        "**/*.js",
+        "**/*.jsx"
+    ]
+}

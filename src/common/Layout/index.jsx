@@ -6,7 +6,7 @@ import 'antd/lib/button/style/css';
 
 import '../style/index.css';
 import Header from '../components/Header';
-import storeConfig from '../../state/store';
+import storeConfig from '../../store';
 
 const store = storeConfig();
 

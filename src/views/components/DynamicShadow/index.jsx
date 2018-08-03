@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './dynamicshadow.css';
 
-export default class DynamicShadow extends Component {
-    render() {
-        return (
-            <div className='dynamic-shadow'></div>
-        );
-    }
-}
+const DynamicShadow = () => <div className='dynamic-shadow'></div>;
+export default DynamicShadow;

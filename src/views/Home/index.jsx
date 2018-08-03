@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SubComponent from '../components/GridLayout';
+import SubComponent from '../components/Text';
 
 class Home extends Component {
     constructor(props) {
