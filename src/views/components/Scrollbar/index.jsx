@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import './scrollbar.css';
 
@@ -11,13 +11,13 @@ export default class Scrollbar extends Component {
     }
     render() {
         return (
-            <Fragment>
+            <div className='overflow-scroll-gradient'>
                 <div className='scrollbar-wrap'>
                     <div className='custom-scrollbar'>
                         <p>{this.state.content}</p>
                     </div>
                 </div>
-            </Fragment>
+            </div>
         );
     }
 }

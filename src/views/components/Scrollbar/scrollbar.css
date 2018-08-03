@@ -3,22 +3,44 @@
 }
 
 .scrollbar-wrap {
-    width: 200px;
-    height: 60px;
+    width: 20rem;
+    height: 4rem;
     overflow: auto;
-    margin: 0 auto;
 }
-
 .scrollbar-wrap::-webkit-scrollbar {
-    width: 12px;
+    width: 1rem;
 }
-
 .scrollbar-wrap::-webkit-scrollbar-track {
     box-shadow: var(--box-shadow);
-    border-radius: 10px;
+    border-radius: .625rem;
 }
-
 .scrollbar-wrap::-webkit-scrollbar-thumb {
     box-shadow: var(--box-shadow);
-    border-radius: 10px;
+    border-radius: .625rem;
+}
+
+.overflow-scroll-gradient {
+    position: relative;
+    width: 20rem;
+    margin: 0 auto;
+}
+.overflow-scroll-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 19rem;
+    height: 1.6rem;
+    background: linear-gradient(rgba(255, 255, 255, .003), rgba(255, 10, 147, .2));
+    pointer-events: none;
+    border-radius: -0.625rem;
+    /* filter: blur(0.4rem); */
+}
+.overflow-scroll-gradient__scroller {
+    overflow-y: scroll;
+    background: white;
+    width: 240px;
+    height: 200px;
+    padding: 15px 0;
+    line-height: 1.2;
+    text-align: center;
 }

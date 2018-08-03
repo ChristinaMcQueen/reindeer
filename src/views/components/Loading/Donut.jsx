@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './loading.css';
 
-export default class Donut extends Component {
-    render() {
-        return (
-            <div className='donut'>
+const Donut = () => <div className='donut'></div>;
 
-            </div>
-        );
-    }
-}
+export default Donut;
