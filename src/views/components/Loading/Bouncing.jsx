@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './bouncing.css';
+import './loading.css';
 
 export default class index extends Component {
     render() {
