@@ -6,198 +6,172 @@
     margin-bottom: 1rem;
 }
 
-
-
+/* custom selection */
 .text .custom-selection > p::selection {
-    background: deeppink;
     color: white;
+    background: deeppink;
 }
 
-
-
+/* unselectable */
 .text .unselectable {
     user-select: none;
 }
 
-
-
+/* etche */
 .text .etched-wrap {
-    background: #181818;
     padding: .5rem;
+    background: #181818;
 }
 .text .etched-wrap .etched-text {
-    text-shadow: 0 .125rem white;
     font-size: 1.5rem;
     font-weight: bold;
     color: #b8bec5;
+    text-shadow: 0 .125rem white;
 }
 
-
-
+/* gradienttext */
 .text .gradient-wrap .gradient-text {
-    background: -webkit-linear-gradient(0.125turn, #3f87a6, #7983ff, #f69d3c);
+    background: -webkit-linear-gradient(.125turn, #3f87a6, #7983ff, #f69d3c);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 
-
-
+/* hair line */
 .hairline-border {
     box-shadow: 0 0 0 1px;
 }
+
 @media (min-resolution: 2dppx) {
     .hairline-border {
-        box-shadow: 0 0 0 0.5px;
+        box-shadow: 0 0 0 .5px;
     }
 }
+
 @media (min-resolution: 3dppx) {
     .hairline-border {
-        box-shadow: 0 0 0 0.33333333px;
+        box-shadow: 0 0 0 .33333333px;
     }
 }
+
 @media (min-resolution: 4dppx) {
     .hairline-border {
-        box-shadow: 0 0 0 0.25px;
+        box-shadow: 0 0 0 .25px;
     }
 }
 
-
-
+/* pretty text underline */
 .pretty-text-underline {
     display: inline;
     color: #7983ff;
     text-shadow: 1px 1px #f5f6f9, -1px 1px #f5f6f9, -1px -1px #f5f6f9, 1px -1px #f5f6f9;
     background-image: linear-gradient(90deg, currentColor 100%, transparent 100%);
-    background-position: bottom;
     background-repeat: no-repeat;
+    background-position: bottom;
     background-size: 100% 1px;
 }
 .pretty-text-underline::-moz-selection {
-    background-color: rgba(0, 150, 255, 0.3);
     text-shadow: none;
+    background-color: rgba(0, 150, 255, .3);
 }
 .pretty-text-underline::selection {
-    background-color: rgba(0, 150, 255, 0.3);
     text-shadow: none;
+    background-color: rgba(0, 150, 255, .3);
 }
 
-
+/* truncatetext */
 .truncate-text {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     width: 12.5rem;
-}
-
-
-
-/* .multi-truncate-text {
-    height: 3em;
-    overflow: hidden;
-    zoom: 1;
-} */
-.multi-truncate-common {
-    position: relative;
-    line-height: 1.5em;
-    /* 高度为需要显示的行数*行高，比如这里我们显示两行，则为3 */
-    height: 3em;
-    overflow: hidden;
-}
-.multi-truncate-common::after {
-    content: '...';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0 1rem;
-    background-color: #fff;
-}
-
-
-
-.multi-truncate-clamp {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* multi truncate text use line clamp */
+.multi-truncate-clamp {
     display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     -webkit-box-flex: unset;
 }
 
-
+/* multi truncate text use elements */
 .ellipsis {
     position: relative;
     width: 260px;
-    max-height: 108px;
+
     /* h*n */
-    line-height: 18px;
-    /* h */
+    max-height: 108px;
     overflow: hidden;
+
+    /* h */
+    line-height: var(--line-heigth);
     -webkit-animation: width-change 8s ease infinite;
 }
-
 .ellipsis-container {
     position: relative;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
+
     /* n */
-    font-size: 50px;
+    -webkit-line-clamp: 6;
+
     /* w */
+    font-size: 50px;
     color: transparent;
 }
-
 .ellipsis-content {
-    color: #000;
     display: inline;
-    vertical-align: top;
-    font-size: 12px;
-    /* f */
-}
 
+    /* f */
+    font-size: 12px;
+    color: #000;
+    vertical-align: top;
+}
 .ellipsis-ghost {
     position: absolute;
-    z-index: 1;
     top: 0;
     left: 50%;
+    z-index: 1;
     width: 100%;
     height: 100%;
     color: #000;
 }
-
-.ellipsis-ghost:before {
-    content: '';
+.ellipsis-ghost::before {
     display: block;
     float: right;
     width: 50%;
     height: 100%;
-}
-
-.ellipsis-placeholder {
     content: '';
+}
+.ellipsis-placeholder {
     display: block;
     float: right;
     width: 50%;
-    height: 108px;
-    /* h*n */
-}
 
+    /* h*n */
+    height: 108px;
+    content: '';
+}
 .ellipsis-more {
     float: right;
-    font-size: 12px;
-    /* f */
-    width: 50px;
+
     /* w */
-    height: 18px;
-    /* h */
-    margin-top: -18px;
-    /* -h */
+    width: 50px;
+    height: var(--line-heigth);
+    margin-top: var(-(--line-heigth));
+
+    /* f */
+    font-size: 12px;
 }
+
 @-webkit-keyframes width-change {
     0%,
     100% {
-        width: 320px
+        width: 320px;
     }
     50% {
-        width: 260px
+        width: 260px;
     }
 }

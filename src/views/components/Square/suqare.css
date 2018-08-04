@@ -3,13 +3,13 @@
     background: #333;
 }
 .square::before {
-    content: '';
     float: left;
     padding-top: 100%;
+    content: '';
 }
 .square::after {
-    content: '';
     display: block;
     clear: both;
+    content: '';
 }
 

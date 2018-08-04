@@ -16,7 +16,6 @@
             "git add"
         ]
     },
-    "stylelint": "stylelint src/*.css",
     "dependencies": {
         "antd": "^3.7.3",
         "prop-types": "^15.6.2",

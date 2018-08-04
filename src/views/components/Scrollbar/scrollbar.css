@@ -2,6 +2,7 @@
     --box-shadow: inset 0 0 6px rgb(255, 10, 147, .5);
 }
 
+/* custom scroll bar */
 .scrollbar-wrap {
     width: 20rem;
     height: 4rem;
@@ -11,36 +12,36 @@
     width: 1rem;
 }
 .scrollbar-wrap::-webkit-scrollbar-track {
-    box-shadow: var(--box-shadow);
     border-radius: .625rem;
+    box-shadow: var(--box-shadow);
 }
 .scrollbar-wrap::-webkit-scrollbar-thumb {
-    box-shadow: var(--box-shadow);
     border-radius: .625rem;
+    box-shadow: var(--box-shadow);
 }
 
+/* overflow scroll gradient mask */
 .overflow-scroll-gradient {
     position: relative;
     width: 20rem;
     margin: 0 auto;
 }
 .overflow-scroll-gradient::after {
-    content: '';
     position: absolute;
     bottom: 0;
     width: 19rem;
     height: 1.6rem;
-    background: linear-gradient(rgba(255, 255, 255, .003), rgba(255, 10, 147, .2));
     pointer-events: none;
-    border-radius: -0.625rem;
-    /* filter: blur(0.4rem); */
+    content: '';
+    background: linear-gradient(rgba(255, 255, 255, .003), rgba(255, 10, 147, .2));
+    border-radius: -.625rem;
 }
 .overflow-scroll-gradient__scroller {
-    overflow-y: scroll;
-    background: white;
     width: 240px;
     height: 200px;
     padding: 15px 0;
+    overflow-y: scroll;
     line-height: 1.2;
     text-align: center;
+    background: white;
 }

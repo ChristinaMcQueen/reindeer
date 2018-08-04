@@ -1,33 +1,31 @@
 .mouse-cursor-gradient-tracking {
     position: relative;
+    padding: .5rem 1rem;
     margin: 2rem;
-    background: #7983ff;
-    padding: 0.5rem 1rem;
+    overflow: hidden;
     font-size: 1.2rem;
-    border: none;
     color: white;
     cursor: pointer;
+    background: #7983ff;
+    border: none;
     outline: none;
-    overflow: hidden;
 }
-
 .mouse-cursor-gradient-tracking span {
     position: relative;
 }
-
 .mouse-cursor-gradient-tracking::before {
     --size: 0;
-    content: '';
+
     position: absolute;
-    left: var(--x);
     top: var(--y);
+    left: var(--x);
     width: var(--size);
     height: var(--size);
+    content: '';
     background: radial-gradient(circle closest-side, aqua, rgba(0, 255, 255, .0001));
+    transition: width .2s ease, height .2s ease;
     transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
 }
-
 .mouse-cursor-gradient-tracking:hover::before {
     --size: 200px;
 }
