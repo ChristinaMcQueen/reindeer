@@ -1,6 +1,10 @@
 import { ROUTER } from '../actions/router';
 
-const router = (state = { location: 'home' }, action) => {
+const preloadedState = {
+    location: 'home'
+};
+
+const router = (state = preloadedState, action) => {
     switch (action.type) {
     case ROUTER:
         return { ...state, location: action.payload };

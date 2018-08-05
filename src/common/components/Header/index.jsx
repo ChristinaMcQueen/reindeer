@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
+import RouterConfig from '../../../Route/config';
 import setRouter from '../../../state/actions/router';
-import config from './config';
 
 const mapStateToProps = state => ({
     location: state.router.location
@@ -19,7 +19,14 @@ const mapDispatchProps = dispatch => ({
 class Header extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currLocation: props.location
+        };
         this.handleClick = this.handleClick.bind(this);
+    }
+    componentDidMount() {
+        const currLocation = RouterConfig.filter(item => item.path === window.location.pathname)[0].name;
+        this.props.actions.setRouter(currLocation);
     }
     handleClick(name, path) {
         this.props.actions.setRouter(name);
@@ -31,7 +38,7 @@ class Header extends Component {
                 selectedKeys={[this.props.location]}
                 mode="horizontal"
             >
-                {config.Menu.map(item => <Menu.Item
+                {RouterConfig.map(item => <Menu.Item
                     key={item.name}
                     onClick={() => this.handleClick(item.name, item.path)}
                 >
