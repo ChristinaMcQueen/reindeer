@@ -13,7 +13,7 @@ const ListComponent = props => (
     />
 );
 ListComponent.propTypes = {
-    data: PropTypes.array.isRequired,
+    data: PropTypes.object.isRequired,
     handleDelete: PropTypes.func.isRequired
 };
 export default ListComponent;

@@ -1,30 +1,25 @@
+import { fromJS } from 'immutable';
+
 import * as types from './actionTypes';
 
-const preloadedState = {
+const preloadedState = fromJS({
     inputValue: '',
     list: []
-};
+});
 
 const todoReducer = (state = preloadedState, action) => {
     switch (action.type) {
     case types.SET_INPUT_VALUE:
     {
-        const newState = JSON.parse(JSON.stringify(state));
-        newState.inputValue = action.value;
-        return newState;
+        return state.set('inputValue', action.value);
     }
     case types.ADD_ITEM:
     {
-        const newState = JSON.parse(JSON.stringify(state));
-        newState.list.push(newState.inputValue);
-        newState.inputValue = '';
-        return newState;
+        return state.set('list', state.get('list').push(state.get('inputValue'))).set('inputValue', '');
     }
     case types.DEL_ITEM:
     {
-        const newState = JSON.parse(JSON.stringify(state));
-        newState.list.splice(action.index, 1);
-        return newState;
+        return state.set('list', state.get('list').splice(action.index, 1));
     }
     default:
         return state;

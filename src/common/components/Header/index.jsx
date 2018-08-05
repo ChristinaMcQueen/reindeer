@@ -9,7 +9,7 @@ import RouterConfig from '../../../Route/config';
 import { actions } from './store';
 
 const mapStateToProps = state => ({
-    location: state.router.location
+    location: state.getIn(['router', 'location'])
 });
 
 const mapDispatchProps = dispatch => ({

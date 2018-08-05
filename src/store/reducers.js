@@ -1,4 +1,4 @@
-import { combineReducers } from '../../../../Library/Caches/typescript/2.9/node_modules/redux';
+import { combineReducers } from 'redux-immutable';
 
 import { routerReducer } from '../common/components/Header/store';
 import { todoReducer } from '../views/TodoList/store';
