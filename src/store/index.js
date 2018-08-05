@@ -2,7 +2,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import rootReducer from '../reducers';
+import rootReducer from './reducers';
 
 const preloadedState = {};
 
@@ -19,7 +19,7 @@ const storeConfig = (initialState = preloadedState) => { // eslint-disable-line
         enhancer
     );
     if (module.hot) {
-        module.hot.accept('../reducers', () => store.replaceState(require('../reducers')));
+        module.hot.accept('./reducers', () => store.replaceState(require('./reducers')));
     }
     return store;
 };

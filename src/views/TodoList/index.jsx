@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 // import { bindActionCreators } from 'redux';
 // import { connect } from 'react-redux';
 
 import Input from './components/Input';
 import List from './components/List';
 
-// import setInputValue from '../../state/actions/todolist';
-import { setInputValue, addItem, delItem } from '../../state/actions/todolist';
-import storeConfig from '../../state/store';
+import { actions } from './store';
+import storeConfig from '../../store';
 
 import './todolist.css';
 
@@ -17,39 +15,35 @@ import './todolist.css';
 //     inputValue: state.todolist.inputValue,
 //     list: state.todolist.list
 // });
-// const mapDispatchProps = dispatch => ({
-//     actions: bindActionCreators({ setInputValue }, dispatch)
+// const mapDispatchToProps = dispatch => ({
+//     actions: bindActionCreators({ setInputValue, addItem, delItem }, dispatch)
 // });
 const store = storeConfig();
 
 class TodoList extends Component {
     constructor(props) {
         super(props);
-        this.state = store.getState().todolist;
+        this.state = store.getState().todo;
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleStoreChange = this.handleStoreChange.bind(this);
 
         store.subscribe(this.handleStoreChange);
     }
-    componentDidMount() {
-        axios.get('http://localhost:8988/api/mockup/data').then((res) => {
-            console.log('------------------------------------');
-            console.log(res);
-            console.log('------------------------------------');
-        });
-    }
     handleStoreChange() {
-        this.setState(() => ({ ...store.getState().todolist }));
+        this.setState(() => ({ ...store.getState().todo }));
     }
     handleInputChange(evt) {
-        store.dispatch(setInputValue(evt.target.value));
+        store.dispatch(actions.setInputValue(evt.target.value));
+        // this.props.actions.setInputValue(evt.target.value);
     }
     handleInputSubmit() {
-        store.dispatch(addItem());
+        store.dispatch(actions.addItem());
+        // this.props.actions.addItem();
     }
     handleDelete(index) {
-        store.dispatch(delItem(index));
+        store.dispatch(actions.delItem(index));
+        // this.props.actions.delItem(index);
     }
     render() {
         return (
@@ -71,4 +65,4 @@ TodoList.defaultProps = {
     actions: {}
 };
 export default TodoList;
-// export default connect(mapStateToProps, mapDispatchProps)(TodoList);
+// export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

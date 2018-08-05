@@ -1,30 +1,26 @@
-import {
-    SET_INPUT_VALUE,
-    ADD_ITEM,
-    DEL_ITEM
-} from '../actions/todolist';
+import * as types from './actionTypes';
 
 const preloadedState = {
     inputValue: '',
     list: []
 };
 
-const todolist = (state = preloadedState, action) => {
+const todoReducer = (state = preloadedState, action) => {
     switch (action.type) {
-    case SET_INPUT_VALUE:
+    case types.SET_INPUT_VALUE:
     {
         const newState = JSON.parse(JSON.stringify(state));
         newState.inputValue = action.value;
         return newState;
     }
-    case ADD_ITEM:
+    case types.ADD_ITEM:
     {
         const newState = JSON.parse(JSON.stringify(state));
         newState.list.push(newState.inputValue);
         newState.inputValue = '';
         return newState;
     }
-    case DEL_ITEM:
+    case types.DEL_ITEM:
     {
         const newState = JSON.parse(JSON.stringify(state));
         newState.list.splice(action.index, 1);
@@ -35,4 +31,4 @@ const todolist = (state = preloadedState, action) => {
     }
 };
 
-export default todolist;
+export default todoReducer;

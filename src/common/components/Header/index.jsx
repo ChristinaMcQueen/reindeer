@@ -6,14 +6,14 @@ import { withRouter } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
 import RouterConfig from '../../../Route/config';
-import setRouter from '../../../state/actions/router';
+import { actions } from './store';
 
 const mapStateToProps = state => ({
     location: state.router.location
 });
 
 const mapDispatchProps = dispatch => ({
-    actions: bindActionCreators({ setRouter }, dispatch)
+    actions: bindActionCreators({ ...actions }, dispatch)
 });
 
 class Header extends Component {
