@@ -38,14 +38,8 @@ export default class Text extends Component {
                     <p className='multi-truncate-clamp' style={{ WebkitBoxOrient: 'vertical' }}>{this.state.content}</p>
                 </section>
                 <section>
-                    <div className='ellipsis'>
-                        <div className='ellipsis-container'>
-                            <div className='ellipsis-content'>{this.state.content}{this.state.content}{this.state.content}</div>
-                            <div className='ellipsis-ghost'>
-                                <div className='ellipsis-placeholder'></div>
-                                <div className='ellipsis-more'>...more</div>
-                            </div>
-                        </div>
+                    <div className='block-with-text'>
+                        {this.state.content}
                     </div>
                 </section>
             </div>

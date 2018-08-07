@@ -96,82 +96,28 @@
     -webkit-box-flex: unset;
 }
 
-/* multi truncate text use elements */
-.ellipsis {
+/* styles for '...' */
+.block-with-text {
     position: relative;
-    width: 260px;
-
-    /* h*n */
-    max-height: 108px;
+    max-height: 2.4rem;
+    padding-right: 1rem;
+    margin-right: -1rem;
     overflow: hidden;
-
-    /* h */
-    line-height: var(--line-heigth);
-    -webkit-animation: width-change 8s ease infinite;
+    line-height: 1.2rem;
+    text-align: justify;
 }
-.ellipsis-container {
-    position: relative;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-
-    /* n */
-    -webkit-line-clamp: 6;
-
-    /* w */
-    font-size: 50px;
-    color: transparent;
-}
-.ellipsis-content {
-    display: inline;
-
-    /* f */
-    font-size: 12px;
-    color: #000;
-    vertical-align: top;
-}
-.ellipsis-ghost {
+.block-with-text::before {
     position: absolute;
-    top: 0;
-    left: 50%;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    color: #000;
+    right: 0;
+    bottom: 0;
+    content: '...';
 }
-.ellipsis-ghost::before {
-    display: block;
-    float: right;
-    width: 50%;
-    height: 100%;
+.block-with-text::after {
+    position: absolute;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    margin-top: .2rem;
     content: '';
-}
-.ellipsis-placeholder {
-    display: block;
-    float: right;
-    width: 50%;
-
-    /* h*n */
-    height: 108px;
-    content: '';
-}
-.ellipsis-more {
-    float: right;
-
-    /* w */
-    width: 50px;
-    height: var(--line-heigth);
-    margin-top: var(-(--line-heigth));
-
-    /* f */
-    font-size: 12px;
-}
-
-@-webkit-keyframes width-change {
-    0%,
-    100% {
-        width: 320px;
-    }
-    50% {
-        width: 260px;
-    }
+    background: white;
 }
