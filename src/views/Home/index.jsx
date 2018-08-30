@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SubComponent from '../components/Text';
+import SubComponent from '../components/LayoutHorizontal';
 
 class Home extends Component {
     constructor(props) {
@@ -11,9 +11,9 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="home">
+            <main className="home">
                 <SubComponent />
-            </div>
+            </main>
         );
     }
 }
