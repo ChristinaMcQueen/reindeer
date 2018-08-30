@@ -1,0 +1,72 @@
+.layout {
+    width: 40rem;
+    margin: .5rem auto;
+    background: #e2f9db;
+}
+.cell-wrap {
+    background: #dbf9f2;
+}
+article > div,
+.layout span {
+    background: #f9dbe2;
+}
+article > div {
+    height: 2rem;
+}
+
+/* line-height */
+.line-height {
+    height: 10rem;
+    line-height: 10rem;
+}
+
+/* padding */
+.padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* position & height */
+.position-height {
+    position: relative;
+    height: 5rem;
+}
+.position-height > div {
+    position: absolute;
+    top: 50%;
+    height: 2rem;
+    margin-top: -1rem;
+}
+
+/* position & transform */
+.position-transform {
+    position: relative;
+    height: 5rem;
+}
+.position-transform > div {
+    position: absolute;
+    top: 50%;
+    height: 2rem;
+    transform: translateY(-50%);
+}
+
+/* table */
+.table {
+    display: table-cell;
+    height: 5rem;
+    vertical-align: middle;
+}
+
+/* flex */
+.flex {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+}
+
+/* grid */
+.grid {
+    display: grid;
+    align-items: center;
+    height: 5rem;
+}

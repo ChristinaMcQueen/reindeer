@@ -1,0 +1,147 @@
+.layout {
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.layout .left {
+    background: #f2dbf9;
+}
+.layout .center {
+    background: #f9f2db;
+}
+.layout .right {
+    background: #e2f9db;
+}
+
+/* float layout */
+.three .float div {
+    height: 3rem;
+}
+.three .float .left {
+    float: left;
+    width: 300px;
+}
+.three .float .right {
+    float: right;
+    width: 300px;
+}
+
+/* position layout */
+.three .position {
+    position: relative;
+    height: 3rem;
+}
+.three .position div {
+    height: 3rem;
+}
+.three .position .left {
+    position: absolute;
+    left: 0;
+    width: 300px;
+}
+.three .position .center {
+    position: absolute;
+    right: 300px;
+    left: 300px;
+}
+.three .position .right {
+    position: absolute;
+    right: 0;
+    width: 300px;
+}
+
+/* table layout */
+.three .table {
+    display: table;
+    width: 100%;
+    height: 3rem;
+}
+.three .table div {
+    display: table-cell;
+}
+.three .table .left {
+    width: 300px;
+}
+.three .table .right {
+    width: 300px;
+}
+
+/* flex layout */
+.three .flex {
+    display: flex;
+    height: 3rem;
+}
+.three .flex .left {
+    width: 300px;
+}
+.three .flex .right {
+    width: 300px;
+}
+.three .flex .center {
+    flex-grow: 1;
+}
+
+/* grid layout */
+.three .grid {
+    display: grid;
+    grid-template-rows: 3rem;
+    grid-template-columns: 300px auto 300px;
+}
+
+/* float layout */
+.two .float div {
+    height: 3rem;
+}
+.two .float .left {
+    float: left;
+    width: 300px;
+}
+
+/* position layout */
+.two .position {
+    position: relative;
+    height: 3rem;
+}
+.two .position div {
+    height: 3rem;
+}
+.two .position .left {
+    width: 300px;
+}
+.two .position .right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 300px;
+}
+
+/* table layout */
+.two .table {
+    display: table;
+    width: 100%;
+    height: 3rem;
+}
+.two .table div {
+    display: table-cell;
+}
+.two .table .left {
+    width: 300px;
+}
+
+/* flex layout */
+.two .flex {
+    display: flex;
+    height: 3rem;
+}
+.two .flex .left {
+    width: 300px;
+}
+.two .flex .right {
+    flex-grow: 1;
+}
+
+/* grid layout */
+.two .grid {
+    display: grid;
+    grid-template-rows: 3rem;
+    grid-template-columns: 300px auto;
+}

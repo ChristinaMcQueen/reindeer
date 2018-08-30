@@ -1,0 +1,62 @@
+.layout {
+    width: 40rem;
+    margin: .5rem auto;
+    background: #e2f9db;
+}
+.cell-wrap {
+    background: #dbf9f2;
+}
+article > div,
+.layout span {
+    background: #f9dbe2;
+}
+article > div {
+    height: 2rem;
+}
+
+/* text-align */
+.text-align {
+    text-align: center;
+}
+
+/* margin */
+.margin > div {
+    width: 10rem;
+    margin: 0 auto;
+}
+
+/* position & width */
+.position-width {
+    position: relative;
+    height: 3rem;
+}
+.position-width > div {
+    position: absolute;
+    left: 50%;
+    width: 20rem;
+    margin-left: -10rem;
+}
+
+/* position & transform */
+.position-transform {
+    position: relative;
+    height: 3rem;
+}
+.position-transform > div {
+    position: absolute;
+    left: 50%;
+    width: 20rem;
+    transform: translateX(-50%);
+}
+
+/* flex */
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+/* grid */
+.grid {
+    display: grid;
+    justify-content: center;
+}
