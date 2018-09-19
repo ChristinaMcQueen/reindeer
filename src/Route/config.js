@@ -1,5 +1,6 @@
 import Home from '../views/Home';
 import TodoList from '../views/TodoList';
+import Uploader from '../views/Uploader';
 
 const Router = [{
     name: 'home',
@@ -13,7 +14,12 @@ const Router = [{
     path: '/todolist',
     value: 'Todo List',
     component: TodoList
-}
-];
+}, {
+    name: 'uploader',
+    icon: 'uploader',
+    path: '/uploader',
+    value: 'Uploader',
+    component: Uploader
+}];
 
 export default Router;
